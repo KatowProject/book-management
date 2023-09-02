@@ -25,6 +25,7 @@
 # app_baseURL = ''
 # app.forceGlobalSecureRequests = false
 # app.CSPEnabled = false
+app.JWT_SECRET_KEY = anime
 
 #--------------------------------------------------------------------
 # DATABASE

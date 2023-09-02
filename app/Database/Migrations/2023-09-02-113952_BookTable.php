@@ -5,7 +5,7 @@ namespace App\Database\Migrations;
 use CodeIgniter\Database\Migration;
 use CodeIgniter\Database\RawSql;
 
-class UserTable extends Migration
+class BookTable extends Migration
 {
     public function up()
     {
@@ -18,22 +18,33 @@ class UserTable extends Migration
                 'unsigned' => true,
                 'auto_increment' => true
             ],
-            'name' => [
+            'title' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100
             ],
-            'email' => [
+            'author' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100
             ],
-            'password' => [
+            'publisher' => [
                 'type' => 'VARCHAR',
                 'constraint' => 100
             ],
-            'role' => [
+            'year' => [
                 'type' => 'INT',
-                'constraint' => 1,
-                'default' => 2
+                'constraint' => 4
+            ],
+            'total_page' => [
+                'type' => 'INT',
+                'constraint' => 4
+            ],
+            'price' => [
+                'type' => 'INT',
+                'constraint' => 10
+            ],
+            'image' => [
+                'type' => 'TEXT',
+                'default' => 'default.jpg'
             ],
             'created_at' => [
                 'type' => 'DATETIME',
@@ -42,11 +53,10 @@ class UserTable extends Migration
             'updated_at' => [
                 'type' => 'DATETIME',
                 'default' => new RawSql('GETDATE()')
-            ]
+            ],
         ]);
-        
         $forge->addKey('id', true);
-        $forge->createTable('users', true);
+        $forge->createTable('books', true);
     }
 
     public function down()

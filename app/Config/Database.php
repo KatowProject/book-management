@@ -27,7 +27,7 @@ class Database extends Config
     public array $default = [
         'DSN'          => '',
         'hostname'     => 'KATO',
-        'username'     => 'kato',
+        'username'     => 'katow',
         'password'     => 'manlordnopal',
         'database'     => 'db_bookstore',
         'DBDriver'     => 'SQLSRV',
