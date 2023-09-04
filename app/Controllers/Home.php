@@ -8,4 +8,9 @@ class Home extends BaseController
     {
         return view('home/index');
     }
+
+    public function NotFound()
+    {
+        return view('errors/html/error_404');
+    }
 }

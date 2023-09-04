@@ -24,7 +24,8 @@ class UserTable extends Migration
             ],
             'email' => [
                 'type' => 'VARCHAR',
-                'constraint' => 100
+                'constraint' => 100,
+                'unique' => true
             ],
             'password' => [
                 'type' => 'VARCHAR',
@@ -44,7 +45,7 @@ class UserTable extends Migration
                 'default' => new RawSql('GETDATE()')
             ]
         ]);
-        
+
         $forge->addKey('id', true);
         $forge->createTable('users', true);
     }

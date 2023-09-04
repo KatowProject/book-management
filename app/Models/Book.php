@@ -23,7 +23,15 @@ class Book extends Model
     protected $deletedField  = 'deleted_at';
 
     // Validation
-    protected $validationRules      = [];
+    protected $validationRules      = [
+        'title' => 'required',
+        'author' => 'required',
+        'publisher' => 'required',
+        'year' => 'required',
+        'total_page' => 'required',
+        'price' => 'required',
+        'image' => 'required|mime_in[image,image/jpeg,image/png,image/jpg]'
+    ];
     protected $validationMessages   = [];
     protected $skipValidation       = false;
     protected $cleanValidationRules = true;
@@ -38,4 +46,9 @@ class Book extends Model
     protected $afterFind      = [];
     protected $beforeDelete   = [];
     protected $afterDelete    = [];
+
+    public function setValidationRules($rules)
+    {
+        $this->validationRules = $rules;
+    }
 }
